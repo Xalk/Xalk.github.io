@@ -1,5 +1,5 @@
 .can{
-    border: solid thin;
+    border: solid 3px;
    
     
 }
@@ -24,10 +24,43 @@ background-image: linear-gradient(315deg, #ffcfdf 0%, #b0f3f1 74%);
 
 
 .content-colum-right{
-    
+    border: black;
 }
 
 .content-colum-left-text{
     color: #36096d;
     
+}
+
+
+
+.content-buttons{
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    
+    
+}
+
+.btn-1{
+    padding: 50px;
+    cursor: pointer;
+    font-family: 'century gothic';
+    font-weight: bold;
+    font-size: 16px;
+}
+.btn-2{
+    margin-left: 100px;
+    padding: 50px;
+    cursor: pointer;
+    font-family: 'century gothic';
+    font-weight: bold;
+    font-size: 16px;
+}
+
+.btn-3{
+    cursor: pointer;
+    padding: 50px;
+    font-family: 'century gothic';
+    font-weight: bold;
+    font-size: 16px;
 }

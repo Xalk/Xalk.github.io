@@ -7,6 +7,8 @@ let ctx = canvas.getContext('2d');
 
 let isMouseDown = null;
 
+let coords = [];
+
 
 
 
@@ -26,9 +28,11 @@ canvas.addEventListener('mouseup', function () {
 
 
 
-canvas.addEventListener('mousemove', function (e) {
+canvas.addEventListener('pointermove', function (e) {
 
     if (isMouseDown) {
+        coords.push([e.clientX, e.clientY])
+
         ctx.lineTo(e.clientX, e.clientY);
         ctx.stroke();
 
@@ -45,6 +49,40 @@ canvas.addEventListener('mousemove', function (e) {
     }
 
 
+})
+
+
+
+
+let reset = document.querySelector('.btn-1');
+reset.onclick = () => {
+    ctx.fillStyle = 'white';
+    ctx.fillRect(0, 0, 600, 600)
+
+}
+
+
+function save() {
+    localStorage.setItem('coords', JSON.stringify(coords))
+}
+
+
+
+
+document.addEventListener('keydown', function (e) {
+    if (e.keyCode == 82) {
+        console.log('sdfsdf');
+    }
+
+    if (e.keyCode == 83) {
+        save();
+        console.log('Saved');
+
+    }
+
+    if (e.keyCode == 80) {
+        console.log('sdfsdf');
+    }
 
 
 
@@ -52,6 +90,19 @@ canvas.addEventListener('mousemove', function (e) {
 })
 
 
+document.addEventListener('keydown', function (e) {
+
+    if (e.keyCode == 82) {
+        ctx.fillStyle = 'white';
+        ctx.fillRect(0, 0, 600, 600)
+    }
+})
 
 
-//firstSave
+
+
+
+// let canvas2 = document.getElementById('myCanvas2');
+// let ctx2 = canvas.getContext('2d');
+
+
