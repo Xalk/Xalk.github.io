@@ -1,20 +1,53 @@
-let bt1 = document.querySelector('.bt1');
-let out = document.querySelector('.out');
-bt1.onclick = () => {
-    out.innerHTML = "Геть з вiдси!";
-}
+
 
 
 
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 
-canvas.addEventListener('pointermove', function (e) {
-    ctx.lineTo(e.clientX, e.clientY);
-    ctx.stroke();
+let isMouseDown = null;
 
+
+
+
+
+canvas.addEventListener('mousedown', function () {
+    isMouseDown = true;
+})
+
+canvas.addEventListener('mouseup', function () {
+    isMouseDown = false;
     ctx.beginPath();
-    ctx.moveTo(e.clientX, e.clientY);
+})
+
+
+
+
+
+
+
+canvas.addEventListener('mousemove', function (e) {
+
+    if (isMouseDown) {
+        ctx.lineTo(e.clientX, e.clientY);
+        ctx.stroke();
+
+        ctx.beginPath();
+        ctx.arc(e.clientX, e.clientY, 5, 0, Math.PI * 2);
+        ctx.fillStyle = "aqua"
+        ctx.fill();
+
+
+        ctx.beginPath();
+        ctx.strokeStyle = "aqua"
+        ctx.lineWidth = 5 * 2;
+        ctx.moveTo(e.clientX, e.clientY);
+    }
+
+
+
+
+
 
 })
 
