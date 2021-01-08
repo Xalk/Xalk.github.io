@@ -9,7 +9,7 @@ bt1.onclick = () => {
 let canvas = document.getElementById('myCanvas');
 let ctx = canvas.getContext('2d');
 
-canvas.addEventListener('mousemove', function (e) {
+canvas.addEventListener('pointermove', function (e) {
     ctx.lineTo(e.clientX, e.clientY);
     ctx.stroke();
 
