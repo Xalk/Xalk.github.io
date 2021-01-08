@@ -3,3 +3,5 @@ let out = document.querySelector('.out');
 bt1.onclick = () => {
     out.innerHTML = "Геть з вiдси!";
 }
+
+//firstSave
